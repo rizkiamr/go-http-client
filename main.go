@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"context"
 	"encoding/json"
 	"fmt"
@@ -43,9 +42,4 @@ func main() {
 		panic(err)
 	}
 	fmt.Printf("%+v\n", data)
-
-	scanner := bufio.NewScanner(response.Body)
-	for i := 0; scanner.Scan() && i < 5; i++ {
-		fmt.Println(scanner.Text())
-	}
 }
